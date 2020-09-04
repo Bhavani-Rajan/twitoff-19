@@ -1,5 +1,5 @@
 # TwitOff
-Reference code for DS Unit 3 Sprint 4 Guided Project, Cloud and Productization
+Reference code for DS Unit 3 Sprint 3 Guided Project, Cloud and Productization
 
 Daily roadmap:
 - Basic working app (static/hardcoded "Hello World" level), models, templates
