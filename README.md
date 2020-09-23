@@ -3,7 +3,7 @@ Reference code for DS Unit 3 Sprint 3 Guided Project, Cloud and Productization
 
 Daily roadmap:
 - Basic working app (static/hardcoded "Hello World" level), models, templates
-- Connect to Twitter/Basilica APIs, augment models to save responses from APIs
+- Connect to Twitters API, augment models to save responses from APIs
 - Forms/fancier templates/routes, logistic regression training/predicting
 - Polish (add CSS), debug/discuss, deploy to Heroku
 
