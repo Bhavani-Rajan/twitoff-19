@@ -17,6 +17,6 @@ gunicorn = "*"
 scikit-learn = "*"
 birdisle = "*"
 python-dotenv = "*"
+spacy = "*"
 
 [requires]
-python_version = "3.5"

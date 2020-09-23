@@ -3,8 +3,7 @@ import pickle
 import numpy as np
 from sklearn.linear_model import LogisticRegression
 from .models import User
-from .twitter import BASILICA
-
+from .twitter import vectorize_tweet
 
 def predict_user(user1_name, user2_name, tweet_text, cache=None):
     """Determine and return which user is more likely to say a given Tweet."""
@@ -21,5 +20,6 @@ def predict_user(user1_name, user2_name, tweet_text, cache=None):
                                  np.zeros(len(user2.tweets))])
         log_reg = LogisticRegression().fit(embeddings, labels)
         cache and cache.set(user_set, pickle.dumps(log_reg))
-    tweet_embedding = BASILICA.embed_sentence(tweet_text, model='twitter')
+    #vectorizing the tweet using spacy
+    tweet_embedding = vectorize_tweet(tweet_text)
     return log_reg.predict(np.array(tweet_embedding).reshape(1, -1))
