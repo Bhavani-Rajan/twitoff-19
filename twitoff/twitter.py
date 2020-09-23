@@ -11,12 +11,9 @@ TWITTER_USERS = ['calebhicks', 'elonmusk', 'rrherr', 'SteveMartinToGo',
                  'common_squirrel', 'KenJennings', 'conanobrien',
                  'big_ben_clock', 'IAM_SHAKESPEARE']
 
-TWITTER_AUTH = tweepy.OAuthHandler(getenv('TWITTER_CONSUMER_KEY'),
-                                   getenv('TWITTER_CONSUMER_SECRET'))
-TWITTER_AUTH.set_access_token(getenv('TWITTER_ACCESS_TOKEN'),
-                              getenv('TWITTER_ACCESS_TOKEN_SECRET'))
+TWITTER_AUTH = tweepy.OAuthHandler(getenv('TWITTER_API_KEY'),
+                                   getenv('TWITTER_API_SECRET'))
 TWITTER = tweepy.API(TWITTER_AUTH)
-BASILICA = basilica.Connection(getenv('BASILICA_KEY'))
 
 # loading in nlp model and returning 300 size embedding
 def vectorize_tweet(tweet_text):
