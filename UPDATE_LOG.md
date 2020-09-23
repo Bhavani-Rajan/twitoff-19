@@ -7,9 +7,10 @@ The new Twitoff application that uses the SpaCy library to vectorize tweets inst
 * Twitter.py:
   * Deleted Basilica authentication
   * (line 40) - embeds all the tweets when new user is added 
-* Deleted Cache feature
 * .env:
   * No longer need Basilica authentication
+* No longer need to import Basilica
+* Deleted Cache feature
 
 ## IMPORTANT
 
@@ -19,6 +20,8 @@ The new Twitoff application that uses the SpaCy library to vectorize tweets inst
 
 ### OTHER:
 * Upon installation of Spacy be sure to download the [model](https://spacy.io/usage) as well.
-> Students will need this as well
+> Students will need this as well. You can also use ...sm or ...lg but more accurate with large models
 `<python -m spacy download en_core_web_md>`
 
+### Notes: 
+* Runs slower than the Basilica API (suprising I know) but just keep that in mind when adding new users. 

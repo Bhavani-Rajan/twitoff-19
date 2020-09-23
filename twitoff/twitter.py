@@ -1,6 +1,5 @@
 """Retrieve Tweets, embeddings, and persist in the database."""
 from os import getenv
-import basilica
 import tweepy
 from .models import DB, Tweet, User
 import spacy
