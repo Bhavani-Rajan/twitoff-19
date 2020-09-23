@@ -9,7 +9,6 @@ from .twitter import add_or_update_user, update_all_users
 
 load_dotenv()
 
-
 def create_app():
     """Create and configure an instance of the Flask application."""
     app = Flask(__name__)
@@ -43,6 +42,7 @@ def create_app():
         if user1 == user2:
             message = 'Cannot compare a user to themselves!'
         else:
+            prediction = predict_user(user1, user2, request.values['tweet_text'])
             message = '"{}" is more likely to be said by {} than {}'.format(
                 request.values['tweet_text'], user1 if prediction else user2,
                 user2 if prediction else user1)
