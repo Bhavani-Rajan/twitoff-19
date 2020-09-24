@@ -3,7 +3,6 @@ from os import getenv
 import tweepy
 from .models import DB, Tweet, User
 import spacy
-import en_core_web_sm
 
 # https://greatist.com/happiness/must-follow-twitter-accounts
 TWITTER_USERS = ['calebhicks', 'elonmusk', 'rrherr', 'SteveMartinToGo',
@@ -17,7 +16,7 @@ TWITTER = tweepy.API(TWITTER_AUTH)
 
 # loading in nlp model and returning 300 size embedding
 def vectorize_tweet(tweet_text):
-    nlp = spacy.load('en_core_web_sm')
+    nlp = spacy.load('https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.2.5/en_core_web_sm-2.2.5.tar.gz#en_core_web_sm')
     return nlp(tweet_text).vector
 
 def add_or_update_user(username):
