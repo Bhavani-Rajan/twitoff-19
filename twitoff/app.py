@@ -9,18 +9,6 @@ from .twitter import add_or_update_user, update_all_users
 
 load_dotenv()
 
-if getenv('FLASK_ENV') == 'production':
-    from redis import Redis
-    CACHE = Redis(host=config('REDIS_HOST'), port=config('REDIS_PORT'),
-                  password=config('REDIS_PASSWORD'))
-else:  # development/test, use local mocked Redis
-    from birdisle.redis import Redis
-    CACHE = Redis()
-
-CACHED_COMPARISONS = (loads(CACHE.get('comparisons'))
-                      if CACHE.exists('comparisons') else set())
-
-
 def create_app():
     """Create and configure an instance of the Flask application."""
     app = Flask(__name__)
@@ -30,8 +18,7 @@ def create_app():
 
     @app.route('/')
     def root():
-        return render_template('base.html', title='Home', users=User.query.all(),
-                               comparisons=CACHED_COMPARISONS)
+        return render_template('base.html', title='Home', users=User.query.all())
 
     @app.route('/user', methods=['POST'])
     @app.route('/user/<name>', methods=['GET'])
@@ -55,10 +42,7 @@ def create_app():
         if user1 == user2:
             message = 'Cannot compare a user to themselves!'
         else:
-            prediction = predict_user(user1, user2,
-                                      request.values['tweet_text'], CACHE)
-            CACHED_COMPARISONS.add((user1, user2))
-            CACHE.set('comparisons', dumps(CACHED_COMPARISONS))
+            prediction = predict_user(user1, user2, request.values['tweet_text'])
             message = '"{}" is more likely to be said by {} than {}'.format(
                 request.values['tweet_text'], user1 if prediction else user2,
                 user2 if prediction else user1)
@@ -66,18 +50,14 @@ def create_app():
 
     @app.route('/reset')
     def reset():
-        CACHE.flushall()
-        CACHED_COMPARISONS.clear()
         DB.drop_all()
         DB.create_all()
         return render_template('base.html', title='Reset database!')
 
     @app.route('/update')
     def update():
-        CACHE.flushall()
-        CACHED_COMPARISONS.clear()
         update_all_users()
         return render_template('base.html', users=User.query.all(),
-                               title='Cache cleared and all Tweets updated!')
+                               title='All Tweets updated!')
 
     return app

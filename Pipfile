@@ -8,15 +8,12 @@ verify_ssl = true
 [packages]
 flask = "*"
 jinja2 = "*"
-basilica = "*"
 tweepy = "*"
-redis = "*"
 psycopg2 = "*"
 flask-sqlalchemy = "*"
 gunicorn = "*"
 scikit-learn = "*"
-birdisle = "*"
 python-dotenv = "*"
+spacy = "*"
 
 [requires]
-python_version = "3.5"
