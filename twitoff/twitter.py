@@ -3,6 +3,7 @@ from os import getenv
 import tweepy
 from .models import DB, Tweet, User
 import spacy
+import en_core_web_sm
 
 # https://greatist.com/happiness/must-follow-twitter-accounts
 TWITTER_USERS = ['calebhicks', 'elonmusk', 'rrherr', 'SteveMartinToGo',
