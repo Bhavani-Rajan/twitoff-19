@@ -7,6 +7,7 @@ The new Twitoff application that uses the SpaCy library to vectorize tweets inst
 * Twitter.py:
   * Deleted Basilica authentication
   * (line 40) - embeds all the tweets when new user is added 
+  * imported the en_core_web_sm
 * .env:
   * No longer need Basilica authentication
 * No longer need to import Basilica
@@ -20,13 +21,19 @@ The new Twitoff application that uses the SpaCy library to vectorize tweets inst
 
 ### OTHER:
 * Upon installation of Spacy be sure to download the [model](https://spacy.io/usage) as well.
-> Students will need this as well. You can also use ...sm or ...lg but more accurate with large models
-`<python -m spacy download en_core_web_md>`
-* On production you also need to include a requirments.txt to communicate teh download of this en_core_web_md
+> Students will need this as well. You can also use ...md or ...lg but more accurate with large models
+`<python -m spacy download en_core_web_sm>`
+* On production you also need to include a requirments.txt to communicate the download of this en_core_web_md
 ```text
 <spacy>=2.2.0,<3.0.0
 https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.2.0/en_core_web_sm-2.2.0.tar.gz#egg=en_core_web_sm
 ```
+> You can also download the tar file directly and access it through your requirements through the following (what I did, your choice)
+```text
+./en_core_web_sm-2.2.5.tar.gz
+```
 
 ### Notes: 
 * Runs slower than the Basilica API (suprising I know) but just keep that in mind when adding new users. 
+* need to import the actual model `<import en_core_web_sm>` and then load it `<nlp = en_core_web_sm.load()>`
+> You cna also access it indirectly through the first bullet point in **OTHER** through `<nlp = spacy.load(en_core_web_sm)>`
