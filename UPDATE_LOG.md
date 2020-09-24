@@ -17,8 +17,6 @@ The new Twitoff application that uses the SpaCy library to vectorize tweets inst
 
 ### PIPENV:
 * `<pipenv install spacy>`
-* `<pipenv install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.2.0/en_core_web_sm-2.2.0.tar.gz#egg=en_core_web_sm>`
-> This downloads the model and lets Heroku find it in our Pipfile (small model: sm, medium model: md, large model: lg)
 * `<pipenv uninstall basilica>`
 
 ### OTHER:
