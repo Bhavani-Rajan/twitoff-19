@@ -22,6 +22,11 @@ The new Twitoff application that uses the SpaCy library to vectorize tweets inst
 * Upon installation of Spacy be sure to download the [model](https://spacy.io/usage) as well.
 > Students will need this as well. You can also use ...sm or ...lg but more accurate with large models
 `<python -m spacy download en_core_web_md>`
+* On production you also need to include a requirments.txt to communicate teh download of this en_core_web_md
+```text
+<spacy>=2.2.0,<3.0.0
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.2.0/en_core_web_sm-2.2.0.tar.gz#egg=en_core_web_sm
+```
 
 ### Notes: 
 * Runs slower than the Basilica API (suprising I know) but just keep that in mind when adding new users. 
