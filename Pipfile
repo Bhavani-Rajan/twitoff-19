@@ -15,6 +15,5 @@ gunicorn = "*"
 scikit-learn = "*"
 python-dotenv = "*"
 spacy = "*"
-"en_core_web_sm" = { file = 'https://github.com/explosion/spacy-models/releases/download/de_core_news_sm-2.0.0/de_core_news_sm-2.0.0.tar.gz' }
 
 [requires]

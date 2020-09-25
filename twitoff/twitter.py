@@ -15,7 +15,7 @@ TWITTER_AUTH = tweepy.OAuthHandler(getenv('TWITTER_API_KEY'),
 TWITTER = tweepy.API(TWITTER_AUTH)
 
 # loading in nlp model and returning 300 size embedding
-nlp = spacy.en_core_web_sm.load(disable=['tagger', 'parser'])
+nlp = en_core_web_sm.load()
 def vectorize_tweet(tweet_text):
     return nlp(tweet_text).vector
 
