@@ -15,7 +15,7 @@ TWITTER_AUTH = tweepy.OAuthHandler(getenv('TWITTER_API_KEY'),
 TWITTER = tweepy.API(TWITTER_AUTH)
 
 # loading in nlp model and returning 300 size embedding
-nlp_file = open("nlp_model_sm", "rb")
+nlp_file = open("nlp_model.pkl", "rb")
 nlp = pickle.load(nlp_file)
 def vectorize_tweet(tweet_text):
     return nlp(tweet_text).vector
