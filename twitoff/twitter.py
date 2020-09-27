@@ -2,7 +2,8 @@
 from os import getenv
 import tweepy
 from .models import DB, Tweet, User
-import pickle
+import spacy
+
 
 # https://greatist.com/happiness/must-follow-twitter-accounts
 TWITTER_USERS = ['calebhicks', 'elonmusk', 'rrherr', 'SteveMartinToGo',
@@ -15,8 +16,7 @@ TWITTER_AUTH = tweepy.OAuthHandler(getenv('TWITTER_API_KEY'),
 TWITTER = tweepy.API(TWITTER_AUTH)
 
 # loading in nlp model and returning 300 size embedding
-nlp_file = open("nlp_model_hp", "rb")
-nlp = pickle.load(nlp_file)
+nlp = spacy.load('my_model')
 def vectorize_tweet(tweet_text):
     return nlp(tweet_text).vector
 
