@@ -26,8 +26,17 @@ The new Twitoff application that uses the SpaCy library to vectorize tweets inst
 ### Notes: 
 * need to import the actual model `<import en_core_web_sm>` and then store it in a directory in the base git repo.
 ``` python
+import spacy
+import en_core_web_sm
 
+# To save
+nlp = en_core_web_sm.load()
+nlp.to_disk('my_model/')
+
+# to load
+ nlp = spacy.load('my_model')
 ```
+> [More information on loading and saving with SpaCy](https://spacy.io/usage/saving-loading)
 
 ## Deploying
 
