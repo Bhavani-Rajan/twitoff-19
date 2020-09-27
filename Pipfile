@@ -15,6 +15,5 @@ gunicorn = "*"
 scikit-learn = "*"
 python-dotenv = "*"
 spacy = "*"
-pickle5 = "*"
 
 [requires]
