@@ -39,4 +39,4 @@ nlp.to_disk('my_model/')
 > [More information on loading and saving with SpaCy](https://spacy.io/usage/saving-loading)
 
 ## Deploying
-
+* make sure you upload the model and have the correct path when accessing it.
