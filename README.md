@@ -12,4 +12,4 @@ Stretch goals (some in this repo but *not* for live lecture):
 - Caching (discuss on day 3 offline vs. online learning, but don't implement)
 
 The website is live on Heroku:
-- https://twitoff-nwdelafu-update.herokuapp.com/compare
+- https://twitoff-nwdelafu-update.herokuapp.com/
