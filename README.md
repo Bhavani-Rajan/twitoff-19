@@ -10,3 +10,6 @@ Daily roadmap:
 Stretch goals (some in this repo but *not* for live lecture):
 - Really polishing (assigning HTML classes for CSS, anything JS)
 - Caching (discuss on day 3 offline vs. online learning, but don't implement)
+
+The website is live on Heroku:
+- https://twitoff-nwdelafu-update.herokuapp.com/compare
