@@ -1,6 +1,5 @@
 """Main app/routing file for TwitOff."""
 from os import getenv
-from pickle import dumps, loads
 from dotenv import load_dotenv
 from flask import Flask, render_template, request
 from .models import DB, User
