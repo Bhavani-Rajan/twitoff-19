@@ -6,8 +6,6 @@ from .models import DB, User
 from .predict import predict_user
 from .twitter import add_or_update_user, update_all_users
 
-load_dotenv()
-
 def create_app():
     """Create and configure an instance of the Flask application."""
     app = Flask(__name__)

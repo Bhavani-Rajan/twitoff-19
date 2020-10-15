@@ -11,7 +11,7 @@ TWITTER_USERS = ['calebhicks', 'elonmusk', 'rrherr', 'SteveMartinToGo',
                  'big_ben_clock', 'IAM_SHAKESPEARE']
 
 TWITTER_AUTH = tweepy.OAuthHandler(getenv('TWITTER_API_KEY'),
-                                   getenv('TWITTER_API_SECRET'))
+                                   getenv('TWITTER_API_KEY_SECRET'))
 TWITTER = tweepy.API(TWITTER_AUTH)
 
 # loading in nlp model and returning 300 size embedding

@@ -15,5 +15,6 @@ gunicorn = "*"
 scikit-learn = "*"
 python-dotenv = "*"
 spacy = "*"
+psycopg2-binary = "*"
 
 [requires]
